@@ -11,6 +11,7 @@ def parse_arguments():
         "Application title",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
+    parser.set_defaults(func=None)
     parser.add_argument(
         "--verbose",
         help="Verbose logging",
@@ -72,7 +73,8 @@ def main():
         datefmt="%Y-%m-%d %H:%M:%S",
     )
 
-    args.func(args)
+    if args.func:
+        args.func(args)
 
 
 if __name__ == "__main__":

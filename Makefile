@@ -1,5 +1,5 @@
 all:
-	cp python_boilerplate.py python_boilerplate.pyx
+	cp python_template.py python_template.pyx
 	cython *.pyx --embed
-	gcc -Os -I /usr/include/python3.5m -o python_boilerplate python_boilerplate.c -lpython3.5m -lpthread -lm -lutil -ldl
-	rm python_boilerplate.pyx python_boilerplate.c
+	gcc -Os -I /usr/include/python3.5m -o python_template python_template.c -lpython3.5m -lpthread -lm -lutil -ldl
+	rm python_template.pyx python_template.c
