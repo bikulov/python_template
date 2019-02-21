@@ -10,3 +10,9 @@ To build binary just run:
 ``` bash
 make
 ```
+
+To run tests:
+
+``` bash
+make test
+```
