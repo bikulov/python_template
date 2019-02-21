@@ -56,12 +56,16 @@ def first_module(args):
     logging.info(args.name)
 
 
+def calculate_square(number):
+    return number * number
+
+
 def second_module(args):
     logging.info(args.dry_run)
     logging.info(args.number)
 
     if not args.dry_run:
-        logging.info("Square of %s: %s" % (args.number, args.number * args.number))
+        logging.info("Square of %s: %s" % (args.number, calculate_square(args.number)))
 
 
 def main():
