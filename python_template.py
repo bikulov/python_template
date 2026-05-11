@@ -3,26 +3,20 @@
 
 import argparse
 import logging
-import datetime
 
 
 def parse_arguments():
     parser = argparse.ArgumentParser(
-        "Application title",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        "Application title", formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.set_defaults(func=None)
-    parser.add_argument(
-        "--verbose",
-        help="Verbose logging",
-        action="store_true"
-    )
+    parser.add_argument("--verbose", help="Verbose logging", action="store_true")
     subparsers = parser.add_subparsers()
 
     first_module_parser = subparsers.add_parser(
         "first_module",
         help="First module",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     first_module_parser.set_defaults(func=first_module)
     first_module_parser.add_argument(
@@ -34,13 +28,11 @@ def parse_arguments():
     second_module_parser = subparsers.add_parser(
         "second_module",
         help="Second module",
-        formatter_class=argparse.ArgumentDefaultsHelpFormatter
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     second_module_parser.set_defaults(func=second_module)
     second_module_parser.add_argument(
-        "--dry-run",
-        help="Do not do anything",
-        action="store_true"
+        "--dry-run", help="Do not do anything", action="store_true"
     )
     second_module_parser.add_argument(
         "--number",
@@ -65,7 +57,7 @@ def second_module(args):
     logging.info(args.number)
 
     if not args.dry_run:
-        logging.info("Square of %s: %s" % (args.number, calculate_square(args.number)))
+        logging.info("Square of %s: %s", args.number, calculate_square(args.number))
 
 
 def main():
